@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Sam's Hash Plugin</title>
+		<meta charset="utf-8">
+		<style>
+			/* */
+		</style>
+	</head>
+	<body>
+		<form>
+			<div>
+				<label for="name">Name:</label>
+				<input type="text" value="/\=&=/\" id="name" name="name">
+			</div>
+			<div>
+				<label for="value">Value:</label>
+				<input type="text" value="{['data']}" id="value" name="value">
+			</div>
+			<div>
+				<input type="button" value="set" onclick="set()">
+				<span id="set"></span>
+			</div>
+			<div>
+				<input type="button" value="get" onclick="get()">
+				<span id="get"></span>
+			</div>
+		</form>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+		<script src="http://samhash.googlecode.com/files/samhash.js"></script>
+		<script>
+			function set () {
+				var x = $.hash( $('#name').val(), $('#value').val() );
+				$('#set').text(x);
+			}
+			function get () {
+				var x = $.hash( $('#name').val() );
+				$('#get').text(x);
+			}
+		</script>
+	</body>
+</html>
